@@ -8,6 +8,9 @@ function getAll(name, callback) {
 	var done = false;
 	var result = {};
 	var fn = Exporter['getPaginated' + name];
+	if(fn == "getPaginatedBookmarks") {
+		return;
+	}
 	if (!fn) {
 		throw 'Missing ' + name;
 	}
